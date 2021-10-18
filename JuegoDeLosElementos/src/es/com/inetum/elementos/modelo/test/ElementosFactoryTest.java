@@ -32,7 +32,8 @@ public class ElementosFactoryTest {
 		this.papel = null;
 		this.tijera = null;
 	}
-
+	
+	// Tests Comparar-Piedra
 	@Test
 	public void testCompararPiedraTijera() {
 		assertEquals(1, piedra.comparar(tijera));
@@ -50,7 +51,46 @@ public class ElementosFactoryTest {
 		assertEquals(0, piedra.comparar(piedra));
 		assertEquals("EMPATE", piedra.getDescripcionResultado());
 	}
+	
+	// Tests Comparar-Papel
+	@Test
+	public void testCompararPapelPiedra() {
+		assertEquals(1, papel.comparar(piedra));
+		assertEquals("Papel ganó contra piedra", papel.getDescripcionResultado());
+	}
 
+	@Test
+	public void testCompararPapelTijera() {
+		assertEquals(-1, papel.comparar(tijera));
+		assertEquals("Papel perdió contra tijera", papel.getDescripcionResultado());
+	}
+
+	@Test
+	public void testCompararPapelPapel() {
+		assertEquals(0, papel.comparar(papel));
+		assertEquals("EMPATE", papel.getDescripcionResultado());
+	}
+	
+	// Tests Comparar-Tijera
+	@Test
+	public void testCompararTijeraPapel() {
+		assertEquals(1, tijera.comparar(papel));
+		assertEquals("Tijera ganó contra papel", tijera.getDescripcionResultado());
+	}
+
+	@Test
+	public void testCompararTijeraPiedra() {
+		assertEquals(-1, tijera.comparar(piedra));
+		assertEquals("Tijera perdió contra piedra", tijera.getDescripcionResultado());
+	}
+
+	@Test
+	public void testCompararTijeraTijera() {
+		assertEquals(0, tijera.comparar(tijera));
+		assertEquals("EMPATE", tijera.getDescripcionResultado());
+	}	
+
+	// Tests GetInstance
 	@Test
 	public void testGetInstancePiedra() {
 		assertTrue(ElementosFactory.getInstance(0) instanceof Piedra);

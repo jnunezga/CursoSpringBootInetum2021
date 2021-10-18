@@ -1,9 +1,9 @@
 package es.com.inetum.elementos.modelo;
 
-public class Piedra extends ElementosFactory {
+public class Papel extends ElementosFactory {
 
-	public Piedra() {		
-		super("Piedra", 0);
+	public Papel() {
+		super("Papel", 1);
 	}
 
 	@Override
@@ -11,13 +11,13 @@ public class Piedra extends ElementosFactory {
 		int numero = pElem.getNumero();
 		int resultado = 0;
 		
-		if (numero == TIJERA) {
+		if (numero == PIEDRA) {
 			resultado = 1;
-			descripcionResultado = "Piedra ganó contra tijera";
+			descripcionResultado = "Papel ganó contra piedra";
 		}
-		else if (numero == PAPEL) {
+		else if (numero == TIJERA) {
 			resultado = -1;
-			descripcionResultado = "Piedra perdió contra papel";
+			descripcionResultado = "Papel perdió contra tijera";
 		}
 		else {
 			resultado = 0;

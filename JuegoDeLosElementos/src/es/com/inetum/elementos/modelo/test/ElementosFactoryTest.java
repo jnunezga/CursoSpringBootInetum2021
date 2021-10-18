@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import es.com.inetum.elementos.modelo.ElementosFactory;
 import es.com.inetum.elementos.modelo.Papel;
 import es.com.inetum.elementos.modelo.Piedra;
 import es.com.inetum.elementos.modelo.Tijera;
@@ -35,21 +36,34 @@ public class ElementosFactoryTest {
 	@Test
 	public void testCompararPiedraTijera() {
 		assertEquals(1, piedra.comparar(tijera));
+		assertEquals("Piedra ganó contra tijera", piedra.getDescripcionResultado());
 	}
 
 	@Test
 	public void testCompararPiedraPapel() {
 		assertEquals(-1, piedra.comparar(papel));
+		assertEquals("Piedra perdió contra papel", piedra.getDescripcionResultado());
 	}
 
 	@Test
 	public void testCompararPiedraPiedra() {
 		assertEquals(0, piedra.comparar(piedra));
+		assertEquals("EMPATE", piedra.getDescripcionResultado());
 	}
 
 	@Test
-	public void testGetInstance() {
-		fail("Not yet implemented");
+	public void testGetInstancePiedra() {
+		assertTrue(ElementosFactory.getInstance(0) instanceof Piedra);
+	}
+
+	@Test
+	public void testGetInstancePapel() {
+		assertTrue(ElementosFactory.getInstance(1) instanceof Papel);
+	}
+
+	@Test
+	public void testGetInstanceTijera() {
+		assertTrue(ElementosFactory.getInstance(2) instanceof Tijera);
 	}
 
 }

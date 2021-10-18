@@ -15,9 +15,17 @@ public class Papel extends ElementosFactory {
 			resultado = 1;
 			descripcionResultado = "Papel ganó contra piedra";
 		}
+		else if (numero == SPOCK) {
+			resultado = 1;
+			descripcionResultado = "Papel ganó contra Spock";
+		}
 		else if (numero == TIJERA) {
 			resultado = -1;
 			descripcionResultado = "Papel perdió contra tijera";
+		}
+		else if (numero == LAGARTO) {
+			resultado = -1;
+			descripcionResultado = "Papel perdió contra lagarto";
 		}
 		else {
 			resultado = 0;

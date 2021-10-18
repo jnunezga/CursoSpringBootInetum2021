@@ -1,9 +1,9 @@
 package es.com.inetum.elementos.modelo;
 
-public class Piedra extends ElementosFactory {
+public class Spock extends ElementosFactory {
 
-	public Piedra() {		
-		super("Piedra", 0);
+	public Spock() {
+		super("Spock", 4);
 	}
 
 	@Override
@@ -13,19 +13,19 @@ public class Piedra extends ElementosFactory {
 		
 		if (numero == TIJERA) {
 			resultado = 1;
-			descripcionResultado = "Piedra ganó contra tijera";
+			descripcionResultado = "Spock ganó contra tijera";
 		}
-		else if (numero == LAGARTO) {
+		else if (numero == PIEDRA) {
 			resultado = 1;
-			descripcionResultado = "Piedra ganó contra lagarto";
+			descripcionResultado = "Spock ganó contra piedra";
 		}
 		else if (numero == PAPEL) {
 			resultado = -1;
-			descripcionResultado = "Piedra perdió contra papel";
+			descripcionResultado = "Spock perdió contra papel";
 		}
-		else if (numero == SPOCK) {
+		else if (numero == LAGARTO) {
 			resultado = -1;
-			descripcionResultado = "Piedra perdió contra Spock";
+			descripcionResultado = "Spock perdió contra lagarto";
 		}
 		else {
 			resultado = 0;

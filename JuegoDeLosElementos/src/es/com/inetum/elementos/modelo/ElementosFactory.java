@@ -8,6 +8,8 @@ public abstract class ElementosFactory {
 	public static final int PIEDRA = 0;
 	public static final int PAPEL = 1;
 	public static final int TIJERA = 2;
+	public static final int LAGARTO = 3;
+	public static final int SPOCK = 4;
 	
 	// atributos
 	protected String descripcionResultado;
@@ -54,6 +56,8 @@ public abstract class ElementosFactory {
 		elementos.add(new Piedra());
 		elementos.add(new Papel());
 		elementos.add(new Tijera());
+		elementos.add(new Lagarto());
+		elementos.add(new Spock());
 		
 		for (ElementosFactory elementosFactory : elementos) {
 			if (elementosFactory.isMe(pNum))

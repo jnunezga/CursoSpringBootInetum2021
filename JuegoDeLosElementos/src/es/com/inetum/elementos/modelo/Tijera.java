@@ -15,9 +15,17 @@ public class Tijera extends ElementosFactory {
 			resultado = 1;
 			descripcionResultado = "Tijera ganó contra papel";
 		}
+		else if (numero == LAGARTO) {
+			resultado = 1;
+			descripcionResultado = "Tijera ganó contra lagarto";
+		}
 		else if (numero == PIEDRA) {
 			resultado = -1;
 			descripcionResultado = "Tijera perdió contra piedra";
+		}
+		else if (numero == SPOCK) {
+			resultado = -1;
+			descripcionResultado = "Tijera perdió contra Spock";
 		}
 		else {
 			resultado = 0;
